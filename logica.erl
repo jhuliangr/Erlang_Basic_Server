@@ -2,8 +2,7 @@
 
 -export([factorial_handler/0]).
 
-factorial(Int, Acc)
-  when Int > 0 ->
+factorial(Int, Acc) when Int > 0 ->
   factorial(Int-1,Acc * Int);
 factorial(0, Acc) ->
   Acc.

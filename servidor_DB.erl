@@ -32,12 +32,12 @@ vaciarNodo(NodeName) ->
 
 init(_Args) ->
     process_flag(trap_exit, true),
-    io:format("~p   (~p) Iniciando Base de datos", [{global, ?MODULE}, self()]),
+    io:format("~p   (~p) Iniciando Base de datos...", [{global, ?MODULE}, self()]),
     database:initDB(),
     {ok, #state{}}.
 
 handle_call({store, NodeName, Comment}, _From, State) ->
-    database:getDB(NodeName, Comment),
+    database:storeDB(NodeName, Comment),
     io:format("El dato ha sido guardado con exito en ~p", [NodeName]),
     {reply, ok, State};
 

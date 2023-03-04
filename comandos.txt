@@ -1,0 +1,2 @@
+application:loaded_applications().
+application:which_applications().
