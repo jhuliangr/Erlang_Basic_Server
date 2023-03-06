@@ -1,3 +1,5 @@
+% No esta funcionando... este debe ser el error que me esta dando para iniciar
+
 -module(servidor_DB).
 -behaviour(gen_server).
 %% Cliente
@@ -13,16 +15,16 @@
 %====================================================================
 
 start_link() ->
-    gen_server:start_link({local, ?MODULE}, ?MODULE, [], []).
+    gen_server:start_link({local, servidor_DB}, servidor_DB, [], []).
 
 store(NodeName, Comment) ->
-    gen_server:call({global, ?MODULE}, {store, NodeName, Comment}).
+    gen_server:call({global, servidor_DB}, {store, NodeName, Comment}).
 getDB(NodeName) ->
-    gen_server:call({global, ?MODULE}, {getDB, NodeName}).
+    gen_server:call({global, servidor_DB}, {getDB, NodeName}).
 getDB_2(NodeName) ->
-    gen_server:call({global, ?MODULE}, {getDB_2, NodeName}).
+    gen_server:call({global, servidor_DB}, {getDB_2, NodeName}).
 vaciarNodo(NodeName) ->
-    gen_server:call({global, ?MODULE}, {vaciarNodo, NodeName}).
+    gen_server:call({global, servidor_DB}, {vaciarNodo, NodeName}).
 
 %====================================================================
 %   Callbacks
