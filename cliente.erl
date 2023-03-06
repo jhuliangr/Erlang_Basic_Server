@@ -1,6 +1,6 @@
 -module(cliente).
 
--export([ factorial/1, factorialEscrito/2, guardarComentarios/2, getComentarios/1, getComentarios_2/1, eliminarDatos/1]).
+-export([ factorial/1, factorial/2, guardarComentarios/2, getComentarios/1, getComentarios_2/1, eliminarDatos/1]).
 
 % start() ->
 %     server:start_link().
@@ -11,7 +11,7 @@
 factorial(Val) ->
     server:factorial(Val).
 
-factorialEscrito(Val, Archivo) ->
+factorial(Val, Archivo) ->
     server:factorial(Val, Archivo).
 
 guardarComentarios(NodeName, Comment) ->
